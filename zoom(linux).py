@@ -1,29 +1,12 @@
 import os
-dersler={'mat':'','biyo':'','din':'','ing':'','alm':'','fels':'','beden':'','görsel':'','edeb':'','tarih':'','kimya':'','fizik':'',}
+import sys
+dersler={'m':'zzzzz','b':'zzzzz','d':'zzzzz','i':'zzzzz','a':'zzzzz','fe':'zzzzz','be':'zzzzz','g':'zzzzz','e':'zzzzz','t':'zzzzz','k':'zzzzz','f':'zzzzz',}
+dersler2={'mat':'zzzzz','biyo':'zzzzz','din':'zzzzz','ing':'zzzzz','alm':'zzzzz','fels':'zzzzz','beden':'zzzzz','zzzzz':'zzzzz','edeb':'zzzzz','tarih':'zzzzz','kimya':'zzzzz','fizik':'zzzzz',}
+cho =''
 def oss(a):
     os.system(a)
-cho=int(input("Hangi Ders?\n(1)Matematik\n(2)Edebiyat\n(3)Biyoloji\n(4)İngilizce\n(5)Fizik\n(6)Almanca\n(7)Kimya\n(8)Görsel\n(9)Tarih\n(10)Beden\n(11)Din\n(12)Felsefe\n: "))
-if cho==1:
-    oss('firefox "zoommtg://zoom.us/join?confno='+dersler['mat']+'&pwd=xxxxx"')
-elif cho==2:
-    oss('firefox "zoommtg://zoom.us/join?confno='+dersler['edeb']+'&pwd=xxxxx"')
-elif cho==3:
-    oss('firefox "zoommtg://zoom.us/join?confno='+dersler['biyo']+'&pwd=xxxxx"')
-elif cho==4:
-    oss('firefox "zoommtg://zoom.us/join?confno='+dersler['ing']+'&pwd=xxxxx"')
-elif cho==5:
-    oss('firefox "zoommtg://zoom.us/join?confno='+dersler['fizik']+'&pwd=xxxxx"')
-elif cho==6:
-    oss('firefox "zoommtg://zoom.us/join?confno='+dersler['alm']+'&pwd=xxxxx"')
-elif cho==7:
-    oss('firefox "zoommtg://zoom.us/join?confno='+dersler['kimya']+'&pwd=xxxxx"')
-elif cho==8:
-    oss('firefox "zoommtg://zoom.us/join?confno='+dersler['görsel']+'&pwd=xxxxx"')
-elif cho==9:
-    oss('firefox "zoommtg://zoom.us/join?confno='+dersler['tarih']+'&pwd=xxxxx"')
-elif cho==10:
-    oss('firefox "zoommtg://zoom.us/join?confno='+dersler['beden']+'&pwd=xxxxx"')
-elif cho==11:
-    oss('firefox "zoommtg://zoom.us/join?confno='+dersler['din']+'&pwd=xxxxx"')
-elif cho==12:
-    oss('firefox "zoommtg://zoom.us/join?confno='+dersler['fels']+'&pwd=xxxxx"')
+if len(sys.argv) == 1:
+    cho=str(input("Hangi Ders?\n[M]atematik\n[E]debiyat\n[B]iyoloji\n[İ]ngilizce\n[F]izik\n[A]lmanca\n[K]imya\n[G]örsel\n[T]arih\n[Be]den\n[D]in\n[Fe]lsefe\n: ")).lower()
+    oss('firefox "zoommtg://zoom.us/join?confno='+dersler[cho]+'&pwd=xxxxxx"')
+if len(sys.argv) != 1:
+    oss('firefox "zoommtg://zoom.us/join?confno='+dersler2[sys.argv[-1]]+'&pwd=xxxxxx"')
